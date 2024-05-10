@@ -5,7 +5,7 @@ import Modelo_Vista_Controlador.src.Modelo_logico.Handler_Abstracto;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class HandlerFInalesDeSentencia
+public class HandlerFinalesDeSentencia
         extends Handler_Abstracto {
 
         /*
