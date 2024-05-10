@@ -6,4 +6,13 @@ public class CountUp {
             System.out.println(i);
         }
     }
+
+    @Override
+    public String toString() {
+        return "public void contadorHaciaArriba(){\n" +
+                "        for (int i = 0; true; i++){\n" +
+                "            System.out.println(i);\n" +
+                "        }\n" +
+                "    }";
+    }
 }

@@ -12,7 +12,13 @@ public class CountDown {
 
     @Override
     public String toString() {
-        return "CountDown{num=0}";
+        return " public void cuentaParaAtras() {\n" +
+                "        int num = 10;\n" +
+                "        while (num != 0) {\n" +
+                "            System.out.println(num);\n" +
+                "            num = num - 1;\n" +
+                "        }\n" +
+                "    }";
     }
 
 }

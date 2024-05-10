@@ -58,11 +58,7 @@ public class Main {
 
         handlerEspaciosEnBlancoSyntax.proceso(cuentaAtras.toString());
         handlerEspaciosEnBlancoLexic.proceso(cuentaAtras.toString());
-        handlerDeclaracionDeVariablesSemantica.proceso(cuentaAtras.toString());
-
-
-
-
+        handlerDeclaracionDeVariablesSemantica.proceso(cuentaArriba.toString());
 
     }
 }

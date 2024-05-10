@@ -18,9 +18,9 @@ public class HandlerForSemantic
                 String incremento = matcher.group(3);
 
                 if (!verificarCondicionFor(condicion, incremento)) {
-                    throw new PatronExcepcionSemantica("La condición del bucle For podría hacer que no sea infinito.");
+                    throw new PatronExcepcionSemantica("La condición del bucle For podría hacer que sea infinito.");
                 } else {
-                    System.out.println("La condición del bucle For es semánticamente correcta para un bucle infinito.");
+                    System.out.println("La condición del bucle For no es semánticamente correcta.");
                 }
             } else {
                 throw new PatronExcepcionSemantica("No se encuentra una declaración de un bucle for.");
