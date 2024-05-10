@@ -7,10 +7,10 @@ public abstract class Handler_Abstracto
             implements Handler {
     protected Handler next;
 
-    List<String> ErroresCriticos = new ArrayList<>();
+    //List<String> ErroresCriticos = new ArrayList<>();
     protected void pasarAlSiguiente(String codigo, List<String> resultados) throws ExcepcionSintáctica {
         if (next != null){
-            next.proceso(codigo, resultados);
+            next.proceso(codigo);
         }
     }
 
@@ -19,5 +19,5 @@ public abstract class Handler_Abstracto
         this.next = next;
     }
     @Override
-    public abstract void proceso(String codigo, List<String> resultados) throws ExcepcionSintáctica;
+    public abstract void proceso(String codigo) throws ExcepcionSintáctica;
 }

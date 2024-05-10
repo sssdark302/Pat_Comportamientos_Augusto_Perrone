@@ -6,5 +6,5 @@ public interface Handler {
 
     //crear una lista para ver los errores
     void setSiguiente(Handler next);
-    void proceso(String codigo, List<String> resultados) throws ExcepcionSintáctica;
+    void proceso(String codigo) throws ExcepcionSintáctica;
 }

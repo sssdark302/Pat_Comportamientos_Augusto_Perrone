@@ -6,7 +6,7 @@ public class HandlerEspaciosEnBlancoSyntax
                 extends Handler_Abstracto {
 
     @Override
-    public void proceso(String codigo, List<String> resultados) throws ExcepcionSintáctica{
+    public void proceso(String codigo) throws ExcepcionSintáctica{
        try {
            if (codigo.contains(" ")){
 

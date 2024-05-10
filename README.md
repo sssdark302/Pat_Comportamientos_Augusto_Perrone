@@ -1,21 +1,37 @@
 # Pat_Comportamientos_Augusto_Perrone
 
-Estructura:
+## Estructura:
 
-* Modelo Lógico
-  * Handlers
-  * CountUp
-  * CoundDown
-  * Desmenuzador de codigo con clases heredadas
-  * Clases que vean si cada parte del codigo FUNCIONA
-* Controlador
-  * ControladorPuente
-* Vista
-  * Swing GUI
+Modelo Lógico: Habra cuatro cadenas de responsabilidad que formarán parte de una mas grande:
 
+* DesmenuzadorDeTexto
 
+  * Trocea el bloque de codigo para que sea mas facil de analizar, lo hace con un array
+  * Hay que determinar como entra el codigo y pasa a un string para que pase a las otras cadenas
+* AnalizadoresSintáctico
 
-* Desmenuzador
+  * Handlers pertinentes a cada parte del bloque de codigo
+* AnalizadoresLéxicos
+
+  * Handlers pertinentes a cada parte del bloque del codigo
+* AnalizadoresSemánticos
+
+  * Handlers pertinentes a cada parte del bloque de código
+
+El bloque de codigo a analizar son dos contadores:
+
+* CountUp: bucle for va hacia arriba infinitamente
+* CoundDown: bucle while que se detiene cuando llegue a 0
+
+Controlador
+
+* ControladorPuente
+
+Vista
+
+* Swing GUI
+
+---
 
 ## Analizar los bucles con las expresiones regulares
 

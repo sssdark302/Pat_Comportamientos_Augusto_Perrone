@@ -7,10 +7,14 @@ public class HandlerWhileSyntax extends Handler_Abstracto {
     private static final Pattern patron = Pattern.compile("while\\s*\\(([^)]+)\\)\\s*\\{([\\s\\S]*?)\\}");
 
     @Override
-    public void proceso(String codigo, List<String> resultados) throws ExcepcionSintáctica {
+    public void proceso(String codigo) throws ExcepcionSintáctica {
         Matcher matcher = patron.matcher(codigo);
         if (matcher.find()){
-
         }
+    }
+
+    @Override
+    public void setSiguiente(Handler next) {
+        super.setSiguiente(next);
     }
 }
