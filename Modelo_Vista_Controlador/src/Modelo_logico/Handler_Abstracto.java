@@ -1,9 +1,5 @@
 package Modelo_Vista_Controlador.src.Modelo_logico;
 
-import Modelo_Vista_Controlador.src.Modelo_logico.AnalizadoresSintácticos.ExcepcionSintáctica;
-
-import java.util.List;
-
 public abstract class Handler_Abstracto
             implements Handler {
     protected Handler siguienteHandler;
