@@ -29,8 +29,8 @@ public class HandlerDeclaracionDeVariables
             if (!encontrado) {
                 throw new PatronExcepcionSemantica("No se encuentra una declaracion de variable.");
             }
-        } catch (PatronExcepcionSemantica ex) {
-            System.err.println("Error: " + ex.getMessage());
+        } catch (PatronExcepcionSemantica patronExcepcionSemantica) {
+            System.err.println("Error: " + patronExcepcionSemantica.getMessage());
         }
     }
     private boolean esAsignacionValida(String tipo, String valor) {

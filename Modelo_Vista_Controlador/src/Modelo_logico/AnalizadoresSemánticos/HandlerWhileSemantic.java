@@ -34,7 +34,7 @@ public class HandlerWhileSemantic
         try{
             //ver si hay caracteres no permitidos
             if (!condicion.matches("[\\w\\s\\d()!<>=&|+\\-*/]+")) {
-                throw new PatronExcepcionSemantica("No es posible continuar verificando el bucle while ya que tiene caracteres no permitidos")
+                throw new PatronExcepcionSemantica("No es posible continuar verificando el bucle while ya que tiene caracteres no permitidos");
             }
 
             Pattern patron = Pattern.compile("(\\w+)\\s*([<>=!]+)\\s*(\\w+)");
@@ -52,11 +52,10 @@ public class HandlerWhileSemantic
                     return false;
                 }
             }
-
-            // 3. Lógica de evaluación adicional si es necesario
-
-            return true; // Si pasa todas las comprobaciones, la condición es válida
-        }catch ()
+        }catch (PatronExcepcionSemantica patronExcepcionSemantica){
+            System.err.println("Error: " + patronExcepcionSemantica.getMessage());
+        }
+        return true;
     }
 
 }
