@@ -1,5 +1,7 @@
 # Pat_Comportamientos_Augusto_Perrone
 
+Link al Repo: https://github.com/sssdark302/Pat_Comportamientos_Augusto_Perrone.git
+
 ## Estructura:
 
 Modelo Lógico: Habra cuatro cadenas de responsabilidad que formarán parte de una mas grande:
