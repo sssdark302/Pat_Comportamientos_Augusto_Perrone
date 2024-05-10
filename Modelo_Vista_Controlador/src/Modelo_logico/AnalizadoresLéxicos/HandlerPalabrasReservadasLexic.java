@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class HandlerPalabrasReservadasLexic
         extends Handler_Abstracto {
-    private static final Pattern patron = Pattern.compile("\\b(?:if|else|while|for|return)\\b");
+    private static final Pattern patron = Pattern.compile("\\b(?:if|else|while|for|return|System\\.out\\.(println|print))\\b");
 
     @Override
     public void proceso(String codigo) {

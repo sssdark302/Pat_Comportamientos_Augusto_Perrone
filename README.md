@@ -26,7 +26,16 @@ Modelo Lógico: Habra cuatro cadenas de responsabilidad que formarán parte de u
     * Espacios / Cambios de linea, et
 * AnalizadoresSemánticos
 
+  ¿Qué es el Análisis Semántico?
+
+  El análisis semántico se ocupa de verificar aspectos del código que no pueden ser capturados por el análisis léxico o sintáctico solo, tales como:
+
+  * **Verificación de Tipos**: Asegurar que las operaciones se realicen entre tipos compatibles, como no sumar un entero y una cadena de texto.
+  * **Declaraciones y Alcance de Variables**: Asegurar que las variables sean declaradas antes de su uso y gestionar su visibilidad según el ámbito.
+  * **Uso de Funciones y Procedimientos**: Verificar que las llamadas a funciones y procedimientos sean con el número y tipo correcto de argumentos.
+  * **Control de Flujo**: Asegurar que las estructuras de control del flujo del programa sean lógicamente válidas, como la existencia de una condición booleana en un `if`.
   * Handlers:
+
     * Bucles (con palabras reservadas)
     * Condiciones de los bucles
     * Saltos de linea o final de declaraciones
