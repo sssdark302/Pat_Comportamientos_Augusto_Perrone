@@ -23,7 +23,7 @@ public class HandlerWhileSyntax
                 pasarAlSiguiente(condition); // Pasar la condición al handler léxico para su análisis detallado
 
             } else {
-                System.out.println("Ups...yo no puedo resolver esto");
+                System.out.println("Ups, yo no puedo resolver esto...");
             }
         }catch (PatternSyntaxException e) {
             System.err.println("Error en la sintaxis del patrón de expresión regular: " + e.getMessage());

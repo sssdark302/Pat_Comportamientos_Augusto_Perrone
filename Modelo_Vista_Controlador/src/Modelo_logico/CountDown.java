@@ -9,4 +9,10 @@ public class CountDown {
             num = num - 1;
         }
     }
+
+    @Override
+    public String toString() {
+        return "CountDown{num=0}";
+    }
+
 }

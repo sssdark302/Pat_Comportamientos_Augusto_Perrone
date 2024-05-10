@@ -8,8 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         CountDown cuentaAtras = new CountDown();
-        cuentaAtras.cuentaParaAtras();
-
+        CountUp cuentaArriba = new CountUp();
 
         HandlerEspaciosEnBlancoSyntax handlerEspaciosEnBlancoSyntax = new HandlerEspaciosEnBlancoSyntax();
         HandlerFinalDeSentenciasSyntax handlerFinalDeSentenciasSyntax = new HandlerFinalDeSentenciasSyntax();
@@ -58,6 +57,8 @@ public class Main {
         System.out.println("-------------------------------------------------");
 
         handlerEspaciosEnBlancoSyntax.proceso(cuentaAtras.toString());
+        handlerEspaciosEnBlancoLexic.proceso(cuentaAtras.toString());
+        handlerDeclaracionDeVariablesSemantica.proceso(cuentaAtras.toString());
 
 
 
