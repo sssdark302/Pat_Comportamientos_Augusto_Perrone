@@ -9,7 +9,7 @@ import java.util.regex.PatternSyntaxException;
 public class HandlerPalabrasReservadasSyntax
         extends Handler_Abstracto {
 
-    private static final Pattern patron = Pattern.compile("\b(public|void|int|while|for)\b"); //este codigo regex solo lee las palabras reservadas que se encuentran en los bucles que se nos dieron
+    private static final Pattern patron = Pattern.compile("\\b(?:if|else|while|for|return|System\\.out\\.(println|print))\\b"); //este codigo regex solo lee las palabras reservadas que se encuentran en los bucles que se nos dieron
     @Override
     public void proceso(String codigo) {
 

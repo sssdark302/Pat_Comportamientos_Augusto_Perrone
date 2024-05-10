@@ -5,7 +5,7 @@ import Modelo_Vista_Controlador.src.Modelo_logico.Handler_Abstracto;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class HandlerDeclaracionDeVariables
+public class HandlerDeclaracionDeVariablesSemantica
         extends Handler_Abstracto {
     @Override
     public void proceso(String codigo) {
@@ -29,9 +29,10 @@ public class HandlerDeclaracionDeVariables
             if (!encontrado) {
                 throw new PatronExcepcionSemantica("No se encuentra una declaracion de variable.");
             }
-        } catch (PatronExcepcionSemantica patronExcepcionSemantica) {
-            System.err.println("Error: " + patronExcepcionSemantica.getMessage());
-        }
+        pasarAlSiguiente(codigo);
+    } catch (PatronExcepcionSemantica patronExcepcionSemantica) {
+        System.err.println("Error: " + patronExcepcionSemantica.getMessage());
+    }
     }
     private boolean esAsignacionValida(String tipo, String valor) {
         switch (tipo) {

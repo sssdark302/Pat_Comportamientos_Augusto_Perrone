@@ -25,6 +25,7 @@ public class HandlerWhileSemantic
             } else {
                 throw new PatronExcepcionSemantica("No se encuentra una declaración de un bucle while.");
             }
+            pasarAlSiguiente(codigo);
         } catch (PatronExcepcionSemantica ex) {
             System.err.println("Error: " + ex.getMessage());
         }
@@ -32,30 +33,38 @@ public class HandlerWhileSemantic
 
     private boolean verificarCondicionWhile(String condicion) {
         try{
-            //ver si hay caracteres no permitidos
-            if (!condicion.matches("[\\w\\s\\d()!<>=&|+\\-*/]+")) {
-                throw new PatronExcepcionSemantica("No es posible continuar verificando el bucle while ya que tiene caracteres no permitidos");
-            }
+            Pattern patternCondicion = Pattern.compile("(\\w+)\\s*([<>!=]+)\\s*0");
+            Matcher matcherCondicion = patternCondicion.matcher(condicion);
 
-            Pattern patron = Pattern.compile("(\\w+)\\s*([<>=!]+)\\s*(\\w+)");
-            Matcher matcher = patron.matcher(condicion);
-            while (matcher.find()) {
-                String primero = matcher.group(1); //(\\w+)
-                String operandos = matcher.group(2); // ([<>=!]+)
-                String tercero = matcher.group(3); //(\\w+)
+            if (matcherCondicion.find()) {
+                String variable = matcherCondicion.group(1);
+                String operador = matcherCondicion.group(2);
 
-                // Aquí implementarías la lógica para verificar los operandos y el operador
-                // Por ejemplo, verificar que no se compare un String con un int directamente sin conversión
-
-                // Ejemplo simplificado: verificar que no se use '=' en lugar de '=='
-                if ("=".equals(operandos)) {
+                //como queremos saber que sea posible que el while llegue a 0, solo vamos a mirar ese caso.
+                if (operador.equals("!=")) {
+                    // que mire modificaciones en el cuerpo del bucle
+                    Pattern modifPatron = Pattern.compile(variable + "\\s*=\\s*" + variable + "\\s*[-+]\\s*\\d+");
+                    Matcher modifMatcher = modifPatron.matcher(condicion);
+                    while (modifMatcher.find()) {
+                        String modificacion = modifMatcher.group();
+                        // verificar si incrementa o decrementa
+                        if (modificacion.contains("-")) {
+                            System.out.println("Condicion valida, puede llegar a 0 el bucle..."); // decrementa, puede llegar a cero
+                            return true;
+                        }else {
+                            throw new PatronExcepcionSemantica("El bucle no va a llegar a 0 porque la condicion es inválida.");
+                        }
+                    }
+                    throw new PatronExcepcionSemantica("No se ha encontrado una ");
+                } else {
+                    System.out.println("La operacion no es adecuada para garantizar llegar a 0");
                     return false;
                 }
             }
         }catch (PatronExcepcionSemantica patronExcepcionSemantica){
             System.err.println("Error: " + patronExcepcionSemantica.getMessage());
         }
-        return true;
+        return false;
     }
 
 }
