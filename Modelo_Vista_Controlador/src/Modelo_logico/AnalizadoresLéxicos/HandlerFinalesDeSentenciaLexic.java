@@ -47,10 +47,7 @@ public class HandlerFinalesDeSentenciaLexic
                     System.out.println("Fin de bloque detectado: '}'");
                     break;
             }
-        }if (!matcher.find()){
-            throw new PatronExcepcionLexica("No se encuentran tokens válidos");
-           }
-        // Pasa el código al siguiente handler en la cadena de responsabilidad.
+        }
         pasarAlSiguiente(codigo);
     } catch (PatronExcepcionLexica patronExcepcionLexica){
         System.err.println("Error: " + patronExcepcionLexica.getMessage());

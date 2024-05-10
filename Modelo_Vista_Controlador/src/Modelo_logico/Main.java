@@ -1,8 +1,12 @@
 package Modelo_Vista_Controlador.src.Modelo_logico;
 
+import Modelo_Vista_Controlador.src.Controlador.Controlador;
 import Modelo_Vista_Controlador.src.Modelo_logico.AnalizadoresSemánticos.*;
 import Modelo_Vista_Controlador.src.Modelo_logico.AnalizadoresSintácticos.*;
 import Modelo_Vista_Controlador.src.Modelo_logico.AnalizadoresLéxicos.*;
+import Modelo_Vista_Controlador.src.Vista.Vista;
+
+import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -56,8 +60,8 @@ public class Main {
 
         System.out.println("-------------------------------------------------");
 
-        handlerEspaciosEnBlancoSyntax.proceso(cuentaAtras.toString());
-        handlerEspaciosEnBlancoLexic.proceso(cuentaAtras.toString());
+        handlerEspaciosEnBlancoSyntax.proceso(cuentaArriba.toString());
+        handlerEspaciosEnBlancoLexic.proceso(cuentaArriba.toString());
         handlerDeclaracionDeVariablesSemantica.proceso(cuentaArriba.toString());
 
     }

@@ -19,10 +19,12 @@ public class HandlerForLexic
                 encontrado = true;
                 System.out.println("Token válido "+ matcher.group());
             }
-            if (encontrado){
+            if (!encontrado){
                 throw new PatronExcepcionLexica("No hay tokens válidos");
             }
+
             pasarAlSiguiente(codigo);
+
         }catch (PatronExcepcionLexica patronExcepcionLexica){
             System.err.println("Error: " + patronExcepcionLexica.getMessage());
         }

@@ -19,10 +19,11 @@ public class HandlerPalabrasReservadasLexic
                 encontrado = true;
                 System.out.println("Token válido "+ matcher.group());
             }
-            if (encontrado){
+            if (!encontrado){
                 throw new PatronExcepcionLexica("No hay tokens válidos");
+            }else {
+                pasarAlSiguiente(codigo);
             }
-            pasarAlSiguiente(codigo);
         }catch (PatronExcepcionLexica patronExcepcionLexica){
             System.err.println("Error: " + patronExcepcionLexica.getMessage());
         }

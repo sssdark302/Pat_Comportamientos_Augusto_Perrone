@@ -17,26 +17,16 @@ Modelo Lógico: Habra cuatro cadenas de responsabilidad que formarán parte de u
     * Espacios / Cambios de linea, etc
 * AnalizadoresLéxicos
 
-  El **análisis léxico** es el proceso de convertir una  secuencia de caracteres en una secuencia de tokens. Los tokens son las  unidades básicas como palabras clave, identificadores, constantes  numéricas, operadores, etc. Este proceso es similar a leer un texto y  separar las palabras y signos de puntuación para entender su significado  básico sin entrar en la estructura gramatical o significado contextual  completo.
-
   * Handlers:
+
     * Bucles (con palabras reservadas)
     * Declaracion de variables (con palabras reservadas)
     * Palabras no reservadas
     * Espacios / Cambios de linea, et
 * AnalizadoresSemánticos
 
-  ¿Qué es el Análisis Semántico?
-
-  El análisis semántico se ocupa de verificar aspectos del código que no pueden ser capturados por el análisis léxico o sintáctico solo, tales como:
-
-  * **Verificación de Tipos**: Asegurar que las operaciones se realicen entre tipos compatibles, como no sumar un entero y una cadena de texto.
-  * **Declaraciones y Alcance de Variables**: Asegurar que las variables sean declaradas antes de su uso y gestionar su visibilidad según el ámbito.
-  * **Uso de Funciones y Procedimientos**: Verificar que las llamadas a funciones y procedimientos sean con el número y tipo correcto de argumentos.
-  * **Control de Flujo**: Asegurar que las estructuras de control del flujo del programa sean lógicamente válidas, como la existencia de una condición booleana en un `if`.
   * Handlers:
-
-    * Bucles (con palabras reservadas)
+  * * Bucles (con palabras reservadas)
     * Condiciones de los bucles
     * Saltos de linea o final de declaraciones
     * Declaraciones con palabras reservadas
@@ -44,18 +34,29 @@ Modelo Lógico: Habra cuatro cadenas de responsabilidad que formarán parte de u
 
 El bloque de codigo a analizar son dos contadores:
 
-* CountUp: bucle for va hacia arriba infinitamente
-* CoundDown: bucle while que se detiene cuando llegue a 0
+* CountUp: bucle for va hacia arriba infinitamente. El toString() se ha implementando tal cual porque no se como hacerlo de otra manera al llamar al metodo en el main
+* CoundDown: bucle while que se detiene cuando llegue a 0. El toString() se ha implementando tal cual porque no se como hacerlo de otra manera al llamar al metodo en el main
 
-Controlador
+Controlador:
 
 * ControladorPuente
 
-Vista
+Vista:
+
 
 * Swing GUI
 
 ---
+
+## Faltó por hacer:
+
+* Vista: No se ha implementado la vista, no me dio tiempo.
+* Controlador: No se ha implementado la vista, no me dio tiempo.
+* Arraylist para guardar los tokens (léxico).
+* Arraylist para guardar errores.
+* Arbol sintáctico, hubiese mejorado la parte semántica.
+* Se podría haber hecho mejor la cadena de responsabilidad, dividiéndola en 4 pero siendo englobada por una mas grande, no se si hubiese aportado mucho pero por lo menos era mas flexible.
+
 
 ## Analizar los bucles con las expresiones regulares
 
