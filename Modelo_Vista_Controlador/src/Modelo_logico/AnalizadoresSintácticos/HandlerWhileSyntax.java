@@ -11,6 +11,25 @@ public class HandlerWhileSyntax
         extends Handler_Abstracto {
     private static final Pattern patron = Pattern.compile("while\\s*\\(([^)]+)\\)\\s*\\{([\\s\\S]*?)\\}");
 
+
+    @Override
+    public void proceso(String codigo) {
+        try {
+            Matcher matcher = patron.matcher(codigo);
+
+            if (matcher.matches()) {
+                String condition = matcher.group(1); //representa
+                System.out.println("Bucle 'while' encontrado, pasando la condición al análisis léxico: " + condition);
+                pasarAlSiguiente(condition); // Pasar la condición al handler léxico para su análisis detallado
+
+            } else {
+                System.out.println("Ups...yo no puedo resolver esto");
+            }
+        }catch (PatternSyntaxException e) {
+            System.err.println("Error en la sintaxis del patrón de expresión regular: " + e.getMessage());
+        }
+    }
+/*
     @Override
     public void proceso(String codigo) {
 
@@ -26,10 +45,10 @@ public class HandlerWhileSyntax
                 pasarAlSiguiente(codigo);
             }
 
-        } catch (PatternSyntaxException e) {
-            System.err.println("Error en la sintaxis del patrón de expresión regular: " + e.getMessage());
         }
     }
+
+ */
 
 
     @Override
