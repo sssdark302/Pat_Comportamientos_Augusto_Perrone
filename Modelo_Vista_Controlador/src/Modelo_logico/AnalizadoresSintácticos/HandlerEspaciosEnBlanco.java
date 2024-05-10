@@ -6,18 +6,19 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-public class HandlerPalabrasReservadasSyntax
-        extends Handler_Abstracto {
+public class HandlerEspaciosEnBlanco
+            extends Handler_Abstracto {
+    private final static Pattern patron = Pattern.compile(" ");
 
-    private static final Pattern patron = Pattern.compile("\b(public|void|int|while|for)\b"); //este codigo regex solo lee las palabras reservadas que se encuentran en los bucles que se nos dieron
+
     @Override
     public void proceso(String codigo) {
 
-        try{
+        try {
             Matcher matcher = patron.matcher(codigo);
 
             if (matcher.find()){
-                System.out.println("Las palabras reservadas están bien escritas...");
+                System.out.println("Se han encontrado espacios...");
             }
 
             else {
@@ -26,7 +27,7 @@ public class HandlerPalabrasReservadasSyntax
             }
 
         }catch (PatternSyntaxException e){
-            System.err.println("Error en la sintaxis del patrón de expresión regular: " + e.getMessage());
+            System.err.println("Error en la sintaxis del patrón de expresión regular:"  + e.getMessage());
         }
 
     }

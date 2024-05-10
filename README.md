@@ -10,13 +10,26 @@ Modelo Lógico: Habra cuatro cadenas de responsabilidad que formarán parte de u
   * Hay que determinar como entra el codigo y pasa a un string para que pase a las otras cadenas
 * AnalizadoresSintáctico
 
-  * Handlers pertinentes a cada parte del bloque de codigo
+  * Handlers:
+    * Bucles (con palabras reservadas)
+    * Declaracion de variables (con palabras reservadas)
+    * Palabras no reservadas
+    * Espacios / Cambios de linea, etc
 * AnalizadoresLéxicos
 
-  * Handlers pertinentes a cada parte del bloque del codigo
+  * Handlers:
+    * Bucles (con palabras reservadas)
+    * Declaracion de variables (con palabras reservadas)
+    * Palabras no reservadas
+    * Espacios / Cambios de linea, etc
 * AnalizadoresSemánticos
 
-  * Handlers pertinentes a cada parte del bloque de código
+  * Handlers:
+    * Bucles (con palabras reservadas)
+    * Condiciones de los bucles
+    * Saltos de linea o final de declaraciones
+    * Declaraciones con palabras reservadas
+    * Palabras no reservadas
 
 El bloque de codigo a analizar son dos contadores:
 
