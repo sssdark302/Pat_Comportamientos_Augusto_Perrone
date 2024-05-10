@@ -1,7 +1,8 @@
 package Modelo_Vista_Controlador.src.Modelo_logico;
 
-import Modelo_Vista_Controlador.src.Modelo_logico.AnalizadoresLéxicos.HandlerPalabrasNoReservadas;
+import Modelo_Vista_Controlador.src.Modelo_logico.AnalizadoresSemánticos.*;
 import Modelo_Vista_Controlador.src.Modelo_logico.AnalizadoresSintácticos.*;
+import Modelo_Vista_Controlador.src.Modelo_logico.AnalizadoresLéxicos.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,26 +10,57 @@ public class Main {
         CountDown cuentaAtras = new CountDown();
         cuentaAtras.cuentaParaAtras();
 
-        CountUp cuentaArriba = new CountUp();
-        cuentaArriba.contadorHaciaArriba();
 
-        HandlerEspaciosEnBlancoSyntax handlerEspacios = new HandlerEspaciosEnBlancoSyntax();
-        HandlerFinalDeSentenciasSyntax handlerFinal = new HandlerFinalDeSentenciasSyntax();
-        HandlerForSyntax handlerFor = new HandlerForSyntax();
-        HandlerPalabrasNoReservadas handlerPalabras = new HandlerPalabrasNoReservadas();
-        HandlerPalabrasReservadasSyntax handlerPalabrasReservadas = new HandlerPalabrasReservadasSyntax();
-        HandlerWhileSyntax handlerWhile = new HandlerWhileSyntax();
+        HandlerEspaciosEnBlancoSyntax handlerEspaciosEnBlancoSyntax = new HandlerEspaciosEnBlancoSyntax();
+        HandlerFinalDeSentenciasSyntax handlerFinalDeSentenciasSyntax = new HandlerFinalDeSentenciasSyntax();
+        HandlerForSyntax handlerForSyntax = new HandlerForSyntax();
+        HandlerPalabrasNoReservadasSyntax handlerPalabrasNoReservadasSyntax = new HandlerPalabrasNoReservadasSyntax();
+        HandlerPalabrasReservadasSyntax handlerPalabrasReservadasSyntax = new HandlerPalabrasReservadasSyntax();
+        HandlerWhileSyntax handlerWhileSyntax = new HandlerWhileSyntax();
+
+
+        HandlerEspaciosEnBlancoLexic handlerEspaciosEnBlancoLexic = new HandlerEspaciosEnBlancoLexic();
+        HandlerFinalesDeSentenciaLexic handlerFinalesDeSentenciaLexic = new HandlerFinalesDeSentenciaLexic();
+        HandlerForLexic handlerForLexico = new HandlerForLexic();
+        HandlerPalabrasNoReservadasLexic handlerPalabrasNoReservadasLexic = new HandlerPalabrasNoReservadasLexic();
+        HandlerPalabrasReservadasLexic handlerPalabrasReservadasLexic = new HandlerPalabrasReservadasLexic();
+        HandlerWhileLexic handlerWhileLexico = new HandlerWhileLexic();
+
+
+        HandlerDeclaracionDeVariablesSemantica handlerDeclaracionDeVariablesSemantica = new HandlerDeclaracionDeVariablesSemantica();
+        HandlerForSemantic handlerForSemantic = new HandlerForSemantic();
+        HandlerWhileSemantic handlerWhileSemantic = new HandlerWhileSemantic();
+
         System.out.println("-------------------------------------------------");
 
-        handlerEspacios.setSiguiente(handlerFinal);
-        handlerFinal.setSiguiente(handlerFor);
-        handlerFor.setSiguiente(handlerPalabras);
-        handlerPalabras.setSiguiente(handlerPalabrasReservadas);
-        handlerPalabrasReservadas.setSiguiente(handlerWhile);
+        System.out.println("Creacion cadena de responsabilidad...");
+
+        System.out.println("Analizando sintaxis...");
+
+        handlerEspaciosEnBlancoSyntax.setSiguiente(handlerFinalDeSentenciasSyntax);
+        handlerFinalDeSentenciasSyntax.setSiguiente(handlerForSyntax);
+        handlerForSyntax.setSiguiente(handlerPalabrasNoReservadasSyntax);
+        handlerPalabrasNoReservadasSyntax.setSiguiente(handlerPalabrasReservadasSyntax);
+        handlerPalabrasReservadasSyntax.setSiguiente(handlerWhileSyntax);
+
+        System.out.println("Analizando lexicos...");
+        handlerEspaciosEnBlancoLexic.setSiguiente(handlerFinalesDeSentenciaLexic);
+        handlerFinalesDeSentenciaLexic.setSiguiente(handlerForLexico);
+        handlerForLexico.setSiguiente(handlerPalabrasNoReservadasLexic);
+        handlerPalabrasNoReservadasLexic.setSiguiente(handlerPalabrasReservadasLexic);
+        handlerPalabrasReservadasLexic.setSiguiente(handlerWhileLexico);
+
+        System.out.println("Analizando semanticos...");
+        handlerDeclaracionDeVariablesSemantica.setSiguiente(handlerForSemantic);
+        handlerForSemantic.setSiguiente(handlerWhileSemantic);
+        handlerWhileSemantic.setSiguiente(null);
 
         System.out.println("-------------------------------------------------");
 
-        handlerEspacios.proceso(cuentaAtras.toString());
+        handlerEspaciosEnBlancoSyntax.proceso(cuentaAtras.toString());
+
+
+
 
 
     }
