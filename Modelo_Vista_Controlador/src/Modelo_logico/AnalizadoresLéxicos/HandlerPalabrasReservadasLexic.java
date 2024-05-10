@@ -5,11 +5,9 @@ import Modelo_Vista_Controlador.src.Modelo_logico.Handler_Abstracto;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class HandlerWhileLexic
+public class HandlerPalabrasReservadasLexic
         extends Handler_Abstracto {
-
-    private static final Pattern patron = Pattern.compile("\\b\\d+\\b|\\b[a-zA-Z_][a-zA-Z0-9_]*\\b|[+\\-*/()]=?\n");
-
+    private static final Pattern patron = Pattern.compile("\\b(?:if|else|while|for|return)\\b");
 
     @Override
     public void proceso(String codigo) {
