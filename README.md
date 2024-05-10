@@ -17,11 +17,13 @@ Modelo Lógico: Habra cuatro cadenas de responsabilidad que formarán parte de u
     * Espacios / Cambios de linea, etc
 * AnalizadoresLéxicos
 
+  El **análisis léxico** es el proceso de convertir una  secuencia de caracteres en una secuencia de tokens. Los tokens son las  unidades básicas como palabras clave, identificadores, constantes  numéricas, operadores, etc. Este proceso es similar a leer un texto y  separar las palabras y signos de puntuación para entender su significado  básico sin entrar en la estructura gramatical o significado contextual  completo.
+
   * Handlers:
     * Bucles (con palabras reservadas)
     * Declaracion de variables (con palabras reservadas)
     * Palabras no reservadas
-    * Espacios / Cambios de linea, etc
+    * Espacios / Cambios de linea, et
 * AnalizadoresSemánticos
 
   * Handlers:

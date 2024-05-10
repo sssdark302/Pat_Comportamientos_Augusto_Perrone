@@ -14,7 +14,7 @@ public class DesmenuzadorDeTextoHandler
     @Override
     public void proceso(String codigo) {
 
-        String[] lineas = codigo.split("(?<=;)(?![{\\s])|(?<=})"); //separa el texto
+        String[] lineas = codigo.split("(?<=;)(?![{\\s])|(?<=})"); //separa el texto cuando lee ; - { - }
 
         List<String> bloques = new ArrayList<>(); // se crea el arraylist para guardar los bloques que se separan
 

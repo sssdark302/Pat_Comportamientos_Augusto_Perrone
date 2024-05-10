@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-public class HandlerEspaciosEnBlanco
+public class HandlerEspaciosEnBlancoSyntax
             extends Handler_Abstracto {
     private final static Pattern patron = Pattern.compile(" ");
 
